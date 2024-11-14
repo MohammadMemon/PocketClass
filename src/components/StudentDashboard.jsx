@@ -4,54 +4,59 @@ import { getAuth } from 'firebase/auth';
 
 function StudentDashboard() {
   const [availableSlots, setAvailableSlots] = useState([]);
-  const [myBookings, setMyBookings] = useState([]);
-  const db = getFirestore();
-  const auth = getAuth();
-
-  useEffect(() => {
-    fetchAvailableSlots();
-    fetchMyBookings();
-  }, []);
-
-  const fetchAvailableSlots = async () => {
-    const slotsRef = collection(db, 'slots');
-    const q = query(slotsRef, where('booked', '==', false));
-    const slotsSnap = await getDocs(q);
-    const slotsData = slotsSnap.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setAvailableSlots(slotsData);
-  };
-
-  const fetchMyBookings = async () => {
-    const slotsRef = collection(db, 'slots');
-    const q = query(slotsRef, where('booked', '==', true), where('studentId', '==', auth.currentUser.uid));
-    const slotsSnap = await getDocs(q);
-    const slotsData = slotsSnap.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setMyBookings(slotsData);
-  };
-
-  const bookSlot = async (slotId) => {
-    try {
-      const slotRef = doc(db, 'slots', slotId);
-      await updateDoc(slotRef, {
-        booked: true,
-        bookedAt: new Date().toISOString(),
-        studentId: auth.currentUser.uid,
-        studentEmail: auth.currentUser.email,
-      });
+    const [myBookings, setMyBookings] = useState([]);
+    const db = getFirestore();
+    const auth = getAuth();
+    useEffect(() => {
       fetchAvailableSlots();
       fetchMyBookings();
-    } catch (error) {
-      console.error('Error booking slot:', error);
-    }
-  };
-
-  <div>
+    }, []);
+  
+    const fetchAvailableSlots = async () => {
+      const slotsRef = collection(db, 'slots');
+      const q = query(slotsRef, where("booked", "==", false));
+      const slotsSnap = await getDocs(q);
+      const slotsData = slotsSnap.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setAvailableSlots(slotsData);
+    };
+  
+    const fetchMyBookings = async () => {
+      const slotsRef = collection(db, 'slots');
+      const q = query(
+        slotsRef, 
+        where("booked", "==", true),
+        where("studentId", "==", auth.currentUser.uid)
+      );
+      const slotsSnap = await getDocs(q);
+      const slotsData = slotsSnap.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setMyBookings(slotsData);
+    };
+    console.log("Available Slots:", availableSlots);
+console.log("My Bookings:", myBookings);
+  
+    const bookSlot = async (slotId) => {
+      try {
+        const slotRef = doc(db, 'slots', slotId);
+        await updateDoc(slotRef, {
+          booked: true,
+          bookedAt: new Date().toISOString(),
+          studentId: auth.currentUser.uid,
+          studentEmail: auth.currentUser.email
+        });
+        fetchAvailableSlots();
+        fetchMyBookings();
+      } catch (error) {
+        console.error("Error booking slot:", error);
+      }
+    };
+    return (
+      <div>
         <h2 className="dashboard-title">Student Dashboard</h2>
         
         <div className="bookings-section">
@@ -86,6 +91,8 @@ function StudentDashboard() {
           ))}
         </div>
       </div>
-}
+    );
+  }
 
-export default StudentDashboard;
+
+    export default StudentDashboard;
