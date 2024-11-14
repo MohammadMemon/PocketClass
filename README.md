@@ -1,8 +1,42 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Pocketclass Coding : Booking System Design
+## Demo Link 
+https://pocketclass-ebon.vercel.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Technologies used
+
+**Client:** React + Vite , CSS
+
+**Server:** Node, Express, Firebase
+
+
+## Installation
+
+Install with npm
+
+```bash
+  npm install
+```
+    
+## Setup instructions for running the project locally.
+
+To run locally, run the following commands
+
+Frontend
+
+```bash
+  npm run dev
+```
+Backend
+
+```bash
+  node server.js
+```
+
+
+## Authors
+
+- [@MohammadMemon](https://www.github.com/mohammadmemon)
+
