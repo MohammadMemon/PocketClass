@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">Appointment Booking System</h1>
+        <h1 className="title">PocketClass Coding Assestment : Mohammad Memon </h1>
         {user ? (
           <div className="user-info">
             <span className="user-email">{user.email}</span>

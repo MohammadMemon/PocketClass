@@ -37,8 +37,7 @@ function StudentDashboard() {
       }));
       setMyBookings(slotsData);
     };
-    console.log("Available Slots:", availableSlots);
-console.log("My Bookings:", myBookings);
+
   
     const bookSlot = async (slotId) => {
       try {
