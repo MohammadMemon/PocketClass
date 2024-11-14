@@ -1,0 +1,253 @@
+* styles.css */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  color: #666;
+}
+
+.logout-button {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #dc2626;
+}
+
+.auth-container {
+  max-width: 28rem;
+  margin: 2rem auto 0;
+}
+
+.auth-box {
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.google-button:hover {
+  background-color: #f9fafb;
+}
+
+.google-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.role-container {
+  max-width: 28rem;
+  margin: 2rem auto 0;
+}
+
+.role-box {
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.role-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-button {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.student-button:hover {
+  background-color: #2563eb;
+}
+
+.instructor-button {
+  width: 100%;
+  background-color: #22c55e;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.instructor-button:hover {
+  background-color: #16a34a;
+}
+.dashboard-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form styles */
+  .slot-form {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-inputs {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .input-field {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+  }
+  
+  .add-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Grid layout for slots */
+  .slots-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  /* Slot card styles */
+  .slot-card {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    background-color: white;
+  }
+  
+  .slot-card.booked {
+    background-color: #f3f4f6;
+  }
+  
+  .slot-card p {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Booking specific styles */
+  .bookings-section {
+    margin-bottom: 2rem;
+  }
+  
+  .booking-card {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    background-color: #eff6ff;
+  }
+  
+  .book-button {
+    margin-top: 0.5rem;
+    background-color: #22c55e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .book-button:hover {
+    background-color: #16a34a;
+  }
+  
+  /* Responsive grid */
+  @media (min-width: 640px) {
+    .slots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .slots-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
