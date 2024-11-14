@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
@@ -23,6 +22,8 @@ import {
 } from 'firebase/firestore';
 import './styles.css';
 
+//Firebase Config
+
 const firebaseConfig = {
   apiKey: "AIzaSyDQ_r9L5uQTXsH50WiRxDpSHn-3nRpsV-U",
   authDomain: "pocketclass-e3d20.firebaseapp.com",
@@ -38,6 +39,8 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
+
+// Components
 
 function App() {
   console.log("is working?")
@@ -191,7 +194,7 @@ function RoleSelection({ userId, setUser }) {
   );
 }
 
-// InstructorDashboard and StudentDashboard components
+// InstructorDashboard
 function InstructorDashboard() {
     const [slots, setSlots] = useState([]);
     const [newSlot, setNewSlot] = useState({
@@ -290,7 +293,7 @@ function InstructorDashboard() {
       </div>
     );
   }
-  
+  // StudentDashboard
   function StudentDashboard() {
     const [availableSlots, setAvailableSlots] = useState([]);
     const [myBookings, setMyBookings] = useState([]);
